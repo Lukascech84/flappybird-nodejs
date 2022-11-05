@@ -10,7 +10,7 @@ let death = 0;
 
 hole.addEventListener('animationiteration',() => {
     if (death == 0) {
-        let random = -((Math.random() * 300) + 150);
+        let random = -((Math.random() * 300) + 200);
         if (counter > 0) {
             hole.style.top = random + "px";
         }
@@ -22,7 +22,7 @@ let gravity = setInterval(() => {
 
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if (jumping == 0 && death == 0) {
-        character.style.top = (characterTop + 3) + "px";
+        character.style.top = (characterTop + 4) + "px";
         currscore = counter;
         document.getElementById("currentscore").innerText = "Současné skóre = " + counter;
         if (counter > highscore) {
@@ -59,6 +59,7 @@ function gameover() {
     document.getElementById("deathhighscore").style.fontSize = 30 + "px";
     document.getElementById("currentscore").style.fontSize = 0 + "px";
     document.getElementById("highscore").style.fontSize = 0 + "px";
+    document.getElementById("score").style.height = 0 + "px";
     document.getElementById("button").style.fontSize = 40 + "px";
     document.getElementById("button").style.width = 174 + "px";
     document.getElementById("button").style.height = 40 + "px";
@@ -74,8 +75,9 @@ document.getElementById("button").addEventListener("click",() => {
     deathcreen.style.height = 0 + "px";
     document.getElementById("deathcurrentscore").style.fontSize = 0 + "px";
     document.getElementById("deathhighscore").style.fontSize = 0 + "px";
-    document.getElementById("currentscore").style.fontSize = 50 + "px";
-    document.getElementById("highscore").style.fontSize = 50 + "px";
+    document.getElementById("currentscore").style.fontSize = 40 + "px";
+    document.getElementById("highscore").style.fontSize = 40 + "px";
+    document.getElementById("score").style.height = 375 + "px";
     document.getElementById("button").style.fontSize = 0 + "px";
     document.getElementById("button").style.width = 0 + "px";
     document.getElementById("button").style.height = 0 + "px";
@@ -84,13 +86,16 @@ document.getElementById("button").addEventListener("click",() => {
 
 document.getElementById("click").addEventListener("click",() => {
     if (death == 0) {
+        
         jumping = 1;
         let jumpCount = 0;
         let jumpInterval = setInterval(function () {
             let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
             if ((characterTop > 6) && (jumpCount < 15)) {
                 character.style.top = (characterTop - 5) + "px";
+
             }
+            
             if (jumpCount > 20) {
                 clearInterval(jumpInterval);
                 jumping = 0;
