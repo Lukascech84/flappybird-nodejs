@@ -3,6 +3,39 @@
     padding: 0;
     margin: 0;
 }
+
+#deathscreen{
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    background-color: black;
+}
+#deathhighscore{
+    position: relative;
+    text-align: center;
+    top: 195px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+#deathcurrentscore{
+    position: relative;
+    text-align: center;
+    top: 205px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+#button{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0px;
+    position: relative;
+    width: 174px;
+    height: 40px;
+    background-color: white;
+    margin: auto;
+    top: 250px;
+    cursor: pointer;
+}
+
 #game{
     width: 800px;
     height: 500px;
@@ -40,7 +73,7 @@
     border-radius: 50%;
 }
 #highscore{
-    position: relative;
+    position:relative;
     top: -500px;
     font-size: 50px;
     font-family: 'Josefin Sans', sans-serif;
