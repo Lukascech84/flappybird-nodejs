@@ -22,7 +22,7 @@ let gravity = setInterval(() => {
 
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if (jumping == 0 && death == 0) {
-        character.style.top = (characterTop + 4) + "px";
+        character.style.top = (characterTop + 3) + "px";
         currscore = counter;
         document.getElementById("currentscore").innerText = "Současné skóre = " + counter;
         if (counter > highscore) {
@@ -92,7 +92,7 @@ document.getElementById("click").addEventListener("click",() => {
         let jumpInterval = setInterval(function () {
             let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
             if ((characterTop > 6) && (jumpCount < 15)) {
-                character.style.top = (characterTop - 5) + "px";
+                character.style.top = (characterTop - 4) + "px";
 
             }
             
