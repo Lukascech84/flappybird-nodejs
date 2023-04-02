@@ -8,7 +8,7 @@ let highscore = 0;
 let currscore = 0;
 let death = 0;
 
-hole.addEventListener('animationiteration',() => {
+hole.addEventListener('animationiteration', () => {
     if (death == 0) {
         let random = -((Math.random() * 300) + 200);
         if (counter > 0) {
@@ -64,9 +64,18 @@ function gameover() {
     document.getElementById("button").style.width = 174 + "px";
     document.getElementById("button").style.height = 40 + "px";
     character.style.visibility = "hidden";
+    fetch('http://localhost:3000/savedata', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            currscore
+        })
+    })
 }
 
-document.getElementById("button").addEventListener("click",() => {
+document.getElementById("button").addEventListener("click", () => {
     death = 0;
     character.style.top = 100 + "px";
     hole.style.top = -500 + "px";
@@ -84,9 +93,9 @@ document.getElementById("button").addEventListener("click",() => {
     character.style.visibility = "visible";
 });
 
-document.getElementById("click").addEventListener("click",() => {
+document.getElementById("click").addEventListener("click", () => {
     if (death == 0) {
-        
+
         jumping = 1;
         let jumpCount = 0;
         let jumpInterval = setInterval(function () {
@@ -95,7 +104,7 @@ document.getElementById("click").addEventListener("click",() => {
                 character.style.top = (characterTop - 4) + "px";
 
             }
-            
+
             if (jumpCount > 20) {
                 clearInterval(jumpInterval);
                 jumping = 0;

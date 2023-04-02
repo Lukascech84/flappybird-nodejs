@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title Skóre
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js") 
+    body
+        header.jumbotron-fluid.bg-danger.p-3
+            h1.text-center.text-white #{nadpis}
+        main.container
+            table(class="table table-striped")
+                thead
+                    tr.bg-dark.text-white
+                        th Skóre
+                        th Datum a čas 
+                tbody 
+                    each zapis in zapisy
+                        tr 
+                            td #{zapis.score}
+                            td #{zapis.date}
+
+        footer.text-center.bg-dark.text-white.p-3.fixed-bottom
+            h1 Lukáš Čech, IT2, 2023
+            a(href="/").p-3.text-white ZPĚT

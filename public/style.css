@@ -104,3 +104,18 @@ html{
     width: 500px;
     height: 375px;
 }
+
+footer{
+    text-align: center;
+    background-color: rgb(59, 59, 59);
+    color: white;
+    padding: 30px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+footer a {
+    padding: 30px;
+    color: white;
+}
